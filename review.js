@@ -344,12 +344,12 @@ console.log(mirrorMirrorOnTheWall)
 
 // filter method can not be used on simple. we can only use it on arrays. so i'm changing ReafaelNoBadWords to an array from string.
 
-const RafaelNoBadWords = ["I am so tired of this badword food. I do not want this badword badword food."]
+const RafaelNoBadWords = "I am so tired of this badword food. I do not want this badword badword food."
 
-//let bdw = RafaelNoBadWords.split("badword")
+const arrayRafael = RafaelNoBadWords.split(' ');
+const noBad = arrayRafael.filter(word => word !== 'badword');
 
-const findOut = RafaelNoBadWords.filter(word => word !== "badword");
-console.log(findOut)
+console.log(noBad.join(' '));
 
 // Man math is hard. Let's make our computer do it for us. Use reduce() to find the total of the numbers in numbersToAddUp
 const numbersToAddUp = [99, 5677, 232, 84, 2, 231]
