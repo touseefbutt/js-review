@@ -328,7 +328,7 @@ console.log(exotic)
 
 // Print the last two exotic fruits without altering the newly concatenated array.
 // exotic.slice(-7)
-// console.log(exotic)
+console.log(exotic.slice(-2))
 // Monalissa said she needs help re-organizing her items in alphabetical order.
 const monalissaIsMessy = ["pencil", "paper", "notebook", "computer"]
 monalissaIsMessy.sort()
@@ -341,20 +341,41 @@ console.log(mirrorMirrorOnTheWall)
 
 // ===== HIGHER ORDER METHODS =====
 // Rafael said he''s trying to stop cursing so much, and he wants to start with his text messages. Help him write code to eliminate the badword in his sentences. Must return a string sentence. Must use filter(). :) 
-const RafaelNoBadWords = "I am so tired of this badword food. I do not want this badword badword food."
+
+// filter method can not be used on simple. we can only use it on arrays. so i'm changing ReafaelNoBadWords to an array from string.
+
+const RafaelNoBadWords = ["I am so tired of this badword food. I do not want this badword badword food."]
+
+//let bdw = RafaelNoBadWords.split("badword")
+
+const findOut = RafaelNoBadWords.filter(word => word !== "badword");
+console.log(findOut)
 
 // Man math is hard. Let's make our computer do it for us. Use reduce() to find the total of the numbers in numbersToAddUp
 const numbersToAddUp = [99, 5677, 232, 84, 2, 231]
+const iValue = 0;
+console.log(numbersToAddUp.reduce((pValue,cValue)=> pValue+cValue,iValue))
 
 // ===== SPREAD OPERATOR ===== 
 
 // Create a variable and assign a value of a copied array using the spread operator
+let arr4 = [...numbersToAddUp];
+// console.log(arr4)
 
 // Create two arrays with any elements and connect both of them using the spread operator. Save the connected arrays into a new variable.
 
+let arr1 = [1, 2, 3]
+let arr2 = [4, 5, 6]
+let arr3 = [...arr1, ...arr2]
+
+
 // Using the variable with the newly connected arrays, use spread operator to add something at the end.
+arr3.push(...[7])
 
 // Using the variable with the newly connected arrays, use spread operator to add something at the beginning.
+arr3.unshift(...["Tosi"])
+console.log(arr3)
+
 
 // ===== ACCESS =====
 
@@ -504,6 +525,8 @@ let agge = human['age'];
 console.log(agge)
 
 // Use object destructuring to access location
+const {locationProperty} = human;
+console.log(locationProperty)
 
 // ACCESS Granted
 const bulbasaur = {
@@ -523,17 +546,28 @@ const bulbasaur = {
 }
 
 // Print overgrow
+console.log(bulbasaur.abilities[0].ability);
 
 // Print cut
+console.log(bulbasaur.moves[2])
 
 // Print Bulbahhhh!!!!!
+bulbasaur.sound()
 
 // Add a height of 7 to bulbasaur using the dot notation. (Don't change bulbasaur object manually)
+bulbasaur.height = 7;
 
 // Add a property called order and assign it a value of 1 using the square brackets. (Don't change bulbasaur object manually)
+bulbasaur.order = [1]
 
 // Print an array that contains every single properties in bulbasaur
-
+console.log(Object.keys(bulbasaur))
 // Print every single properties one by one in the console
 
+
+Object.keys(bulbasaur).forEach(key => console.log(key))
+
 // Print an array that contains every single values in bulbasaur
+for (let propt in bulbasaur){
+  console.log(bulbasaur[propt])
+  }
